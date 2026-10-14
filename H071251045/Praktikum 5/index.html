@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pantau Tugas Tim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-100 text-slate-800 min-h-screen">
+    <main class="max-w-3xl mx-auto p-4 sm:p-6 space-y-6">
+      <header >
+        <h1 class="text-2xl font-bold">Pantau Tugas Tim</h1>
+        <p class="text-sm text-slate-500">
+          Pilih anggota untuk melihat tugas dan progresnya.
+        </p>
+      </header>
+
+      
+
+      <section class="bg-white rounded-xl shadow p-4 space-y-4">
+        <h2 id="judul-tugas" class="text-lg font-semibold">Tugas</h2>
+
+        <p id="status-tugas" class="text-slate-500">
+          Pilih salah satu anggota di atas.
+        </p>
+        <p id="ringkasan" class="text-sm font-medium text-indigo-700"></p>
+
+        <!-- F3: Pencarian -->
+        <input
+          id="cari"
+          type="text"
+          placeholder="Cari tugas berdasarkan judul..."
+          class="bg-white border border-slate-300 rounded-lg w-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        />
+
+        <div class="">
+          <form id="form-tugas" class="space-y-2" novalidate>
+            <div class="flex gap-2">
+              <input
+                id="input-judul"
+                type="text"
+                placeholder="Judul tugas baru (min. 5 karakter)"
+                disabled
+                class="flex-1 border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:bg-slate-100"
+              />
+              <button
+                id="tombol-simpan"
+                type="submit"
+                disabled
+                class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Simpan
+              </button>
+            </div>
+            <p id="error-form" class="text-sm text-red-600"></p>
+          </form>
+        </div>
+        <hr>
+
+        <div
+          id="notifikasi"
+          class="hidden bg-green-100 text-green-800 border border-green-300 rounded-lg px-3 py-2 text-sm"
+        ></div>
+
+        <p id="pesan-kosong" class="hidden text-slate-500 italic">
+          Tidak ada tugas yang cocok
+        </p>
+        <ul id="daftar-tugas" class="space-y-2"></ul>
+      </section>
+      
+
+      <section class="bg-white rounded-xl shadow p-4">
+        <h2 class="text-lg font-semibold mb-3">Anggota Tim</h2>
+        <p id="status-anggota" class="text-slate-500"></p>
+        <!-- <div id="daftar-anggota" class="flex flex-wrap gap-2"></div> -->
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
